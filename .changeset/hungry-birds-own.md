@@ -1,5 +1,0 @@
----
-"tailwindcss-plugin-ios": patch
----
-
-🎉
