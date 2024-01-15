@@ -1,0 +1,66 @@
+{
+  "name": "tailwindcss-plugin-ios",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "author": {
+    "email": "doinki94@gmail.com",
+    "name": "doinki",
+    "url": "https://github.com/doinki"
+  },
+  "bugs": "https://github.com/doinki/tailwindcss-plugin-ios/issues",
+  "description": "Tailwindcss Plugin",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/doinki/tailwindcss-plugin-ios#readme",
+  "keywords": [
+    "tailwindcss",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doinki/tailwindcss-plugin-ios.git"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "test": "tailwindcss -i test/tailwind.css -o test/ios.css && vitest run",
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "version": "changeset version && pnpm install --lockfile-only",
+    "publish": "pnpm build && publint && changeset publish",
+    "prepare": "is-ci || husky install"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.11.1",
+    "esbuild-plugin-extension": "^0.0.2",
+    "eslint": "^8.56.0",
+    "eslint-config-mado": "^0.1.1",
+    "husky": "^8.0.0",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^15.2.0",
+    "publint": "^0.2.7",
+    "tailwindcss": "^3.4.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}
